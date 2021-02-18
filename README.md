@@ -1,6 +1,6 @@
 # Calculator
 
-This is the fifth project from The Odin Project's web develpment foundations curriculum. Live version: 
+This is the fifth project from The Odin Project's web develpment foundations curriculum. Check out the live version: https://jonro2955.github.io/odin_foundations_5_calculator/ 
 
 It is a simple calculator with all logic programmed in pure JavaScript. Although it only provides the user with 5 mathematical functions, the addition of decimal, +/- sign change, and the del functionality provided ample problem solving challenges. I'm also proud to include the extra features of calculation history and notepad in addition to the overall visual presentation requiring considerable HTML/CSS design work. Overall, it was a great exercise in JavaScript/CSS/HTML development. Following is the complete project instruction provided by the curriculum. All extra credit tasks have been fully completed. 
 
