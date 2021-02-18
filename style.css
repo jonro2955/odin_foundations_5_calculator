@@ -1,0 +1,283 @@
+body{
+  display: grid;
+  grid-template-columns: auto 700px auto;
+  grid-template-areas: "left middle right";
+  background-image: url("images/cf.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#heading{
+  color:turquoise;
+  text-align: center;
+}
+#leftPane{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertical */
+}
+#rightPane{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertical */
+}
+#history{
+  width: 400px;
+  height: 600px;
+  border:thistle 5px solid;
+  border-radius: 10px;
+  color: #0ff;
+  text-align: center;
+  font-size: 25px;
+  overflow: auto;
+  background-color:rgb(49, 49, 49);
+}
+#latest{
+  color: #0ff;
+  font-size: 25px;
+  position: absolute;
+  top:215px;
+  left:150px;
+}
+#notePad{
+  width: 400px;
+  height: 600px;
+  border:thistle 5px solid;
+  border-radius: 10px;
+  outline: none;
+  overflow: auto;
+  font-size: large;
+  background-color:rgb(49, 49, 49);
+  color: #0ff;
+}
+#middlePane{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#middlePane #heading{
+  font-size: 50px;
+}
+#calculator{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontal */
+  justify-content: center; /* vertical */
+  border: 1px solid black;
+  background-color:rgb(102, 102, 102);
+  box-shadow:
+  0 0 5px rgb(5, 5, 5),
+  0 0 10px #fff,
+  0 0 20px #fff,
+  0 0 40px #0ff,
+  0 0 80px #0ff;
+  /* 0 0 90px #0ff,
+  0 0 100px #0ff,
+  0 0 150px #0ff; */
+  border-radius: 25px;
+  width: 510px;
+  height: 710px;
+  margin-bottom: 70px;
+}
+#brightnessContainer{
+  display: flex;
+  align-items: center; /* horizontal */
+  justify-content: center; /* vertical */
+  outline: none;
+  user-select: none;
+  margin: 0 0 10px 0;
+}
+.brightnessLabel{
+  color:white;
+  font-size: 25px;
+}
+#powerButton{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontal */
+  justify-content: center; /* vertical */
+  color:turquoise;
+  font-size: 20px;
+  padding-top: 6px;
+  height:32px;
+  width: 32px;
+  background-color: white;
+  border-radius:32px;
+  outline: none;
+  user-select: none;
+}
+#innerBorder{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontal */
+  justify-content: center; /* vertical */
+  border: 1px solid black;
+  background-color:rgb(49, 49, 49);
+  border-radius: 15px;
+  width: 400px;
+  height: 600px;
+  gap: 25px;
+
+}
+#display{
+  border: 3px solid white;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items:flex-end; /* horizontal */
+  justify-content: center; /* vertical */
+  width: 350px;
+  height: 100px;
+  font-size: 72px;
+  overflow:hidden;
+  display: flex;
+  background-color: transparent;
+  color:white;
+  text-shadow:
+  0 0 5px rgb(5, 5, 5),
+  0 0 10px #fff,
+  0 0 20px #fff,
+  0 0 40px #0ff,
+  0 0 80px #0ff,
+  0 0 90px #0ff,
+  0 0 100px #0ff,
+  0 0 150px #0ff;
+  box-shadow:
+  0 0 5px rgb(5, 5, 5),
+  0 0 10px #fff,
+  0 0 20px #fff,
+  0 0 40px #0ff,
+  0 0 5px rgb(5, 5, 5) inset,
+  0 0 10px #fff inset,
+  0 0 20px #fff inset,
+  0 0 40px #0ff inset;
+}
+#buttonContainer{
+  display: grid;
+  grid-template-areas: 
+  "  .  .  .  del"
+  "c sign mod div "
+  "seven eight nine mult"
+  "four five six sub"
+  "one two three add"
+  "zero zero dec equal";
+  gap: 5px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  margin-top: 25px;
+  width: 350px;
+  height: 375px;
+}
+.button{
+  border: solid 3px rgb(103, 217, 255);
+  color: white;
+  box-shadow:
+  0 0 5px rgb(5, 5, 5),
+  0 0 10px #fff,
+  0 0 20px #fff,
+  0 0 40px #0ff,
+  0 0 5px rgb(5, 5, 5) inset,
+  0 0 10px #fff inset,
+  0 0 20px #fff inset;
+  background-color: transparent;
+  border-radius: 10px;
+  outline: none;
+  user-select: none;
+  font-size: 25px;
+  text-shadow:
+    0 0 5px rgb(5, 5, 5),
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff;
+}
+.button:hover{
+  transform: scale(1.1);
+  border-color: white;
+  box-shadow:
+  0 0 5px rgb(5, 5, 5),
+  0 0 10px #fff,
+  0 0 20px #fff,
+  0 0 40px #0ff,
+  0 0 80px #0ff,
+  0 0 90px #0ff,
+  0 0 100px #0ff,
+  0 0 150px #0ff;
+}
+.button:active{
+  transform: scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 1rem 2px white;
+}
+#credits{
+  margin: 30px 0 30px 0;
+  text-align: center;
+  font-family: 'Courgette', cursive;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: -50px;
+}
+#btnDel{
+  grid-area: del;
+}  
+#btnC{
+  grid-area: c;
+}
+#btnSign{
+  grid-area: sign;
+}
+#btnMod{
+  grid-area: mod;
+}
+#btnDiv{
+  grid-area: div;
+}
+#btnMult{
+  grid-area: mult;
+}
+#btnSub{
+  grid-area: sub;
+}
+#btnAdd{
+  grid-area: add;
+}
+#btnEqual{
+  grid-area: equal;
+}
+#btnDecimal{
+  grid-area: dec;
+}
+#btn0{
+  grid-area: zero;
+}
+#btn1{
+  grid-area: one;
+}
+#btn2{
+  grid-area: two;
+}
+#btn3{
+  grid-area: three;
+}
+#btn4{
+  grid-area: four;
+}
+#btn5{
+  grid-area: five;
+}
+#btn6{
+  grid-area: six;
+}
+#btn7{
+  grid-area: seven;
+}
+#btn8{
+  grid-area: eight;
+}
+#btn9{
+  grid-area: nine;
+}
