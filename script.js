@@ -31,7 +31,8 @@ function main() {
   }
 
   const display = document.querySelector("#display");
-  const clickSound = document.querySelector("#clickSound")
+  const history = document.querySelector("#history");
+  const notePad = document.querySelector("#notePad");
   let operandA, 
     operandB, 
     operator, 
@@ -77,8 +78,7 @@ function main() {
   }
 
   function pressNumBtn(number) {
-    clickSound.play();
-    /*At error screen, numBtns should be disabled*/
+    /*If error screen, numBtns should be disabled*/
     if (display.textContent.includes("Too big")) {
       return;
     }
@@ -110,8 +110,7 @@ function main() {
   }
 
   function pressOpBtn(symbol) {
-    clickSound.play();
-    /*At error screen, the opBtns should do nothing*/
+    /*If error screen, the opBtns should do nothing*/
     if (display.textContent.includes("Too big")) {
       return;
     }
@@ -158,7 +157,9 @@ function main() {
   }
 
   function pressEqualsBtn() {
-    clickSound.play();
+    if (notePad === document.activeElement) {
+      return;
+    }
     /*The equals button only works if operandA and operator are defined and display has changed,
     or, if all of operandA, operandB and operator are defined.*/
     if (operandA != undefined && operator != undefined && (changed == true || operandB !== undefined)) {
@@ -179,7 +180,6 @@ function main() {
   }
 
   function pressClearBtn() {
-    clickSound.play();
     display.textContent = "0";
     operandA = undefined;
     operandB = undefined;
@@ -190,7 +190,6 @@ function main() {
   }
 
   function pressDelBtn() {
-    clickSound.play();
     changed = true;
     if (display.textContent.includes("Too big")) {
       clear();      
@@ -206,7 +205,6 @@ function main() {
   }
 
   function pressSignBtn() {
-    clickSound.play();
     if (display.textContent[0] !== "-") {
       display.textContent = "-" + display.textContent;
     } else {
@@ -251,23 +249,22 @@ function main() {
   });
 
   //History clear button
-  const history = document.querySelector("#history");
   const historyClearBtn = document.querySelector("#historyClearBtn");
   historyClearBtn.addEventListener("click", () => {
     history.textContent = "";
-    clickSound.play();
   });
 
   //Notepad clear button
-  const notePad = document.querySelector("#notePad");
   const notePadClearBtn = document.querySelector("#notePadClearBtn");
   notePadClearBtn.addEventListener("click", () => {
     notePad.value = "";
-    clickSound.play();
   });
 
   //keyboard keys
   window.addEventListener("keydown", (event) => {
+    if (notePad === document.activeElement) {
+      return;
+    }
     console.log(`Pressed: ${event.key}`);
     switch (event.key) {
       //numBtns
