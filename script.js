@@ -205,6 +205,7 @@ function main() {
   }
 
   function pressSignBtn() {
+    changed = true;
     if (display.textContent[0] !== "-") {
       display.textContent = "-" + display.textContent;
     } else {
