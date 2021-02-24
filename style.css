@@ -32,13 +32,16 @@ body{
   font-size: 25px;
   overflow: auto;
   background-color:rgb(49, 49, 49);
+  word-break: break-all;
 }
-#latest{
+#currentCalcBox{
   color: #0ff;
+  border-bottom:5px solid thistle;
   font-size: 25px;
-  position: absolute;
-  top:215px;
-  left:150px;
+}
+#oldCalcsBox{
+  color: #fff;
+  font-size: 25px;
 }
 #notePad{
   width: 400px;
@@ -124,14 +127,14 @@ body{
 #display{
   border: 3px solid white;
   border-radius: 10px;
+  display: flex;
   flex-direction: column;
   align-items:flex-end; /* horizontal */
   justify-content: center; /* vertical */
   width: 350px;
   height: 100px;
-  font-size: 72px;
-  overflow:hidden;
-  display: flex;
+  font-size: 72px; /*default*/
+  word-break: break-all;
   background-color: transparent;
   color:white;
   text-shadow:
@@ -156,7 +159,7 @@ body{
 #buttonContainer{
   display: grid;
   grid-template-areas: 
-  "  .  .  .  del"
+  "ol ol ol del"
   "c sign mod div "
   "seven eight nine mult"
   "four five six sub"
@@ -168,8 +171,45 @@ body{
   margin-top: 25px;
   width: 350px;
   height: 375px;
+  position: relative;
+  top: -10px;
+}
+#opLabel{
+  width: 245px;
+  height: 50px;
+  display: flex;
+  align-items:center; 
+  text-align:left;
+  color: white;
+  background-color: transparent;
+  border-radius: 10px;
+  outline: none;
+  user-select: none;
+  font-size: 25px;
+  padding-left: 10px;
+  position:relative;
+}
+#op{
+  height: 35px;
+  width: 35px;
+  margin-left: 10px;
+  display: flex;
+  align-items:center;
+  justify-content: center; 
+  text-align:center;
+  border: solid 3px white;
+  color: white;
+  background-color: transparent;
+  border-radius: 10px;
+  outline: none;
+  user-select: none;
+  font-size: 35px;
+  font-weight: bold;
 }
 .button{
+  display: flex;
+  align-items: center; /* horizontal */
+  justify-content: center; /* vertical */
   border: solid 3px rgb(103, 217, 255);
   color: white;
   box-shadow:

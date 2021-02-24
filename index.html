@@ -9,7 +9,14 @@
 <body>
   <div id="leftPane">
     <h3 id="heading">CALCULATION HISTORY</h3> 
-    <div id="history"></div>
+    <div id="history">
+      <div id="currentCalcBox">CURRENT
+        <div id="currentCalc"></div>
+      </div>
+      <div id="oldCalcsBox">PAST
+        <div id="oldCalcs"></div>
+      </div>
+    </div>
     <button class="button" id="historyClearBtn">CLEAR</button>
   </div>
   <div id="middlePane">
@@ -18,6 +25,7 @@
       <div id="innerBorder">
         <div id="display">0</div>
         <div id="buttonContainer">
+          <div id="opLabel">Current Operator:<div id="op"></div></div>
           <button class="button" id="btnDel">Del</button>
           <button class="button" id="btnC">C</button>
           <button class="button" id="btnSign">+/-</button>
