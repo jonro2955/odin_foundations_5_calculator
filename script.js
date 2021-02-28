@@ -176,13 +176,10 @@ function main() {
   }
 
   function pressEqualsBtn() {
-    if (notePad === document.activeElement) {
-      return;
-    }
     /*The equals button only works if operandA and operator are defined and display has changed,
     or, if all of operandA, operandB and operator are defined.*/
     if (operandA != undefined && operator != undefined && (changed == true || operandB !== undefined)) {
-      /*Only change operandB if the display number was changed. Otherwise just use the old value*/ 
+      /*Update operandB only if the display number was changed. Otherwise just use the old value*/ 
       if (changed) operandB = display.textContent;
       result = operate(operandA, operator, operandB);
       displayRounded(result);
@@ -238,24 +235,28 @@ function main() {
   const opBtns = document.querySelectorAll(".opBtn"); 
   opBtns.forEach(btn => btn.addEventListener("click", (event) => {
     pressOpBtn(event.target.textContent);
+    event.currentTarget.blur(); //Makes clicked element unhighlightable and prevents activation by enter key
   }));
 
   //Numbers and decimal buttons
   const numBtns = document.querySelectorAll(".numBtn"); 
   numBtns.forEach(btn => btn.addEventListener("click", (event) => {
-    pressNumBtn(event.target.textContent)
+    pressNumBtn(event.target.textContent);
+    event.currentTarget.blur();
   }));
 
   //Del button
   const btnDel = document.querySelector("#btnDel");
-  btnDel.addEventListener("click", () => {
+  btnDel.addEventListener("click", (event) => {
     pressDelBtn();
+    event.currentTarget.blur();
   });
 
   //Equals button
   const btnEqual = document.querySelector("#btnEqual");
-  btnEqual.addEventListener("click", () => {
+  btnEqual.addEventListener("click", (event) => {
     pressEqualsBtn();
+    event.currentTarget.blur();
   });
 
   //Clear button
@@ -267,21 +268,24 @@ function main() {
 
   //The +/- button
   const btnSign = document.querySelector("#btnSign");
-  btnSign.addEventListener("click", () => {
+  btnSign.addEventListener("click", (event) => {
     pressSignBtn();
+    event.currentTarget.blur();
   });
 
   //History clear button
   const historyClearBtn = document.querySelector("#historyClearBtn");
-  historyClearBtn.addEventListener("click", () => {
+  historyClearBtn.addEventListener("click", (event) => {
     currentCalc.textContent = "";
     oldCalcs.textContent = "";
+    event.currentTarget.blur();
   });
 
   //Notepad clear button
   const notePadClearBtn = document.querySelector("#notePadClearBtn");
-  notePadClearBtn.addEventListener("click", () => {
+  notePadClearBtn.addEventListener("click", (event) => {
     notePad.value = "";
+    event.currentTarget.blur();
   });
 
   //keyboard keys
