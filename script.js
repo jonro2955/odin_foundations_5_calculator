@@ -207,6 +207,7 @@ function main() {
     changed = false;
     op.textContent = "";
     display.style.fontSize = "72px";
+    console.log(`Clear`);
   }
 
   function pressDelBtn() {
@@ -259,8 +260,9 @@ function main() {
 
   //Clear button
   const btnC = document.querySelector("#btnC");
-  btnC.addEventListener("click", () => {
+  btnC.addEventListener("click", (event) => {
     pressClearBtn();
+    event.currentTarget.blur();
   });
 
   //The +/- button
@@ -291,70 +293,69 @@ function main() {
       //numBtns
       case "0":
         pressNumBtn("0"); 
-      return;
+      break;
       case "1":
         pressNumBtn("1");
-      return;
+      break;
       case "2":
         pressNumBtn("2");
-      return;
+      break;
       case "3":
         pressNumBtn("3");
-      return;
+      break;
       case "4":
         pressNumBtn("4");
-      return;
+      break;
       case "5":
         pressNumBtn("5");
-      return;
+      break;
       case "6":
         pressNumBtn("6");
-      return;
+      break;
       case "7":
         pressNumBtn("7");
-      return;
+      break;
       case "8":
         pressNumBtn("8");
-      return;
+      break;
       case "9":
         pressNumBtn("9");
-      return;
+      break;
       case ".":
         pressNumBtn(".");
-      return;
+      break;
       //opBtns
       case "+":
         pressOpBtn("+");
-        return;
+        break;
       case "-":
         pressOpBtn("-");
-        return;
+      break;
       case "*":
         pressOpBtn("*");
-      return;
+      break;
       case "/":
         pressOpBtn("/");
-      return;
+      break;
       case "%":
         pressOpBtn("%");
-      return;
+      break;
       //equals, clear, del, sign
       case "Enter":
         pressEqualsBtn();
-      return;
+      break;
       case ("c"):
         pressClearBtn();
-      return;
+      break;
       case ("Escape"):
         pressClearBtn();
-      return;
+      break;
       case "Backspace":
         pressDelBtn();
-      return;
+      break;
       case "s":
         pressSignBtn();
-      return;
-    } 
+    }
   });
 }
 
