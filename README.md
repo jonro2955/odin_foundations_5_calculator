@@ -2,7 +2,7 @@
 
 This is the fifth project from The Odin Project's web develpment foundations curriculum. Live version: https://jonro2955.github.io/odin_foundations_5_calculator/ 
 
-It is a simple calculator with all logic programmed in pure JavaScript. Although it only provides the user with 5 mathematical functions, the addition of decimal, +/- sign change, and the del functionality provided ample problem solving challenges. I'm also proud to include the extra features of calculation history and notepad in addition to the overall visual presentation requiring considerable HTML/CSS design work. Overall, it was a great exercise in JavaScript/CSS/HTML development. Following is the complete project instruction provided by the curriculum. All extra credit tasks have been fully completed. 
+It is a simple calculator with all logic programmed in pure JavaScript. Although it only provides the user with 5 mathematical functions, the addition of decimal, +/- sign change, and the del functionality provided ample problem solving challenges. I'm also proud to include the calculation history and notepad features in addition to the overall visual presentation.  
 
 Project instructions:
 
@@ -31,10 +31,10 @@ Project instructions:
 - Pressing “clear” should wipe out any existing data.. make sure the user is really starting fresh after pressing “clear”
 - Display a snarky error message if the user tries to divide by 0… don’t let it crash your calculator!
 
-EXTRA CREDIT: Users can get floating point numbers if they do the math required to get one, but they can’t type them in yet. Add a . button and let users input decimals! Make sure you don’t let them type more than one though: 12.3.56.5. It is hard to do math on these numbers. (disable the decimal button if there’s already one in the display).
+EXTRA CREDIT: Users can get floating point numbers if they do the math required to get one, but they can’t type them in yet. Add a . button and let users input decimals! Make sure you don’t let them type more than one though: 12.3.56.5. It is hard to do math on these numbers. (disable the decimal button if there’s already one in the display). Complete.
 
-EXTRA CREDIT: Make it look nice! This can be a good portfolio project… but not if it’s UGLY. At least make the operations a different color from the keypad buttons. 
+EXTRA CREDIT: Make it look nice! This can be a good portfolio project… but not if it’s UGLY. At least make the operations a different color from the keypad buttons. Complete.
 
-EXTRA CREDIT: Add a “backspace” button, so the user can undo if they click the wrong number. 
+EXTRA CREDIT: Add a “backspace” button, so the user can undo if they click the wrong number. Complete.
 
-EXTRA CREDIT: Add keyboard support! 
+EXTRA CREDIT: Add keyboard support! Complete.
